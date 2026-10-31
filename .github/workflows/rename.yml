@@ -1,0 +1,19 @@
+name: rename
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rename site export to index.html
+        run: |
+          git config user.name "nadeem-dev03"
+          git config user.email "nadeem-dev03@users.noreply.github.com"
+          git mv basement-water-damage-orlando.html index.html
+          rm -rf .github
+          git add -A
+          git commit -m "Rename site export to index.html"
+          git push
