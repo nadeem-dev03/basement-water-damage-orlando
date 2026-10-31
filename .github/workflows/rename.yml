@@ -23,7 +23,7 @@ jobs:
           git config user.name "nadeem-dev03"
           git config user.email "nadeem-dev03@users.noreply.github.com"
           if [ -f basement-water-damage-orlando.html ]; then
-            git mv basement-water-damage-orlando.html index.html
+            git mv -f basement-water-damage-orlando.html index.html
             git add -A
             git commit -m "Rename site export to index.html"
             git push origin HEAD:main
